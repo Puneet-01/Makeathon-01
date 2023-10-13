@@ -3,6 +3,10 @@
     height: 500px;
 }
 
+.verify_otp_container {
+    text-align: center;
+}
+
 .verify_otp_digits {
     display: flex;
     text-align: center;

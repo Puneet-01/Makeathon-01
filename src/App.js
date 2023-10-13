@@ -9,26 +9,17 @@ import {
 } from "react-router-dom";
 import VerifyOtp from './Components/VerifyOtp/VerifyOtp';
 function App() {
- 
-  
- 
+
+
+
   return (
     <div className="App">
 
-        <Router>
-      
         <Switch>
-          <Route path="/Home">
-            <Home />
-          </Route>
+          <Route exact path="/"> <Home /> </Route>
+          <Route exact path="/VerifyOtp"> <VerifyOtp /> </Route>
+          <Route exact path="/SourceDestination"> <SourceDestination /> </Route>
         </Switch>
-      
-    </Router>
-
-
-
-      <Home />
-      
     </div>
 
   );

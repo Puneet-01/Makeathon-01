@@ -44,7 +44,7 @@ const SourceDestination = () =>{
     </div>
       </div>
       <div className="column image-column" >
-      <img src={require('./Track my bus.png')} alt="Your Image" className="side-image"/>
+      <img src={require('./Track_my_bus.png')} alt="Your Image" className="side-image"/>
       </div>
     </div>
     <div className="button-container">

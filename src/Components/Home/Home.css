@@ -8,6 +8,7 @@
 .input_text {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 20px;
+    text-align: center;
 }
 
 .backgroundImage {
@@ -44,6 +45,10 @@
 
 .generate_otp:hover {
     cursor: pointer;
+}
+
+.mobile_input {
+    text-align: center;
 }
 
 @media(max-width: 500px) {

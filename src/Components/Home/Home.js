@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import  '../Home/Home.css';
+import '../Home/Home.css';
 import backgroundImage from '../../Assets/generic_banner_Ind.png'
 import axios from 'axios';
 import {
@@ -7,14 +7,13 @@ import {
     Switch,
     Route,
     Link
-  } from "react-router-dom";
-import VerifyOtp from '../VerifyOtp/VerifyOtp';
+} from "react-router-dom";
 
-
-const Home = ({history}) => {
+const Home = ({ history }) => {
 
     const [mobileNumber, setMobileNumber] = useState(0);
     
+
     const inputChangeHandler = (val) => {
         setMobileNumber(val)
     }
@@ -29,22 +28,12 @@ const Home = ({history}) => {
         }
 
         let mobileNumberIn = "91" + mobileNumber;
-        <div>
 
-        
-        <Switch>
-          <Route path="/VerifyOtp">
-            < VerifyOtp/>
-          </Route>
-          </Switch>
-        </div>
-        // axios.get(`http://localhost:8080/get-otp?mobileNumber=${mobileNumberIn}`).then(resp => {
-        //     history.push("/verify-otp")
-        //     console.log(resp)
-        // }).catch(err => {
-        //     console.log(err)
-        // })
-
+        axios.get(`http://localhost:8080/get-otp?mobileNumber=${mobileNumberIn}`).then(resp => {
+            console.log(resp)
+        }).catch(err => {
+            console.log(err)
+        })
     }
 
     return (
@@ -54,7 +43,7 @@ const Home = ({history}) => {
             <div className="mobile_input">
                 <input onChange={(e) => inputChangeHandler(e.target.value)} className="input" type="tel" id="mobileNumber" name="mobileNumber" placeholder="Enter your mobile number" />
                 <Link to="/VerifyOtp">
-                <button className="generate_otp" onClick={getOtpHandler}>GENERATE OTP (ONE TIME PASSWORD)</button>
+                    <button className="generate_otp" onClick={getOtpHandler}>GENERATE OTP (ONE TIME PASSWORD)</button>
                 </Link>
             </div>
         </div>
