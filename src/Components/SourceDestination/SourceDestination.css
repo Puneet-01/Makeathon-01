@@ -55,18 +55,18 @@
   
   .input-boxes {
     display: flex;
-    flex-direction: column; /* Stack input boxes vertically */
-    align-items: center; /* Center horizontally */
+    flex-direction: column;
+    align-items: center; 
     padding:1px;
   }
   
   .rounded-input {
-    width: 100%; /* Full width */
+    width: 90%; 
     padding: 10px;
-    border: none;
-    border-radius: 15px; /* Rounded border */
+    
+    border-radius: 15px; 
     margin: 1px;
-  }
+    }
   @media (max-width: 350px) {
     .container {
       flex-direction: column;
