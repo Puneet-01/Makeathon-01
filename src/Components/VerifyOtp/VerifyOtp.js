@@ -5,11 +5,15 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    Link,
+    useHistory
 } from "react-router-dom";
 
-const VerifyOtp = () => {
+const VerifyOtp = (props) => {
 
+    const history = useHistory();
+
+    // console.log(props.location.mobile)
 
     // document.addEventListener("DOMContentLoaded", function (event) {
 
@@ -30,7 +34,7 @@ const VerifyOtp = () => {
     //                     }
     //                 }
     //             });
-    //         }
+    //         };
     //     } OTPInput();
 
 
@@ -68,16 +72,17 @@ const VerifyOtp = () => {
         //     otp += inputs[i].value;
         // }
         // console.log(otp)
-        return (
-            <div>
+        history.push("/SourceDestination")
+        // return (
+        //     <div>
 
-                <Switch>
-                    <Route path="/about">
-                        < VerifyOtp />
-                    </Route>
-                </Switch>
-            </div>
-        )
+        //         <Switch>
+        //             <Route path="/about">
+        //                 < VerifyOtp />
+        //             </Route>
+        //         </Switch>
+        //     </div>
+        // )
     }
 
     return (
@@ -98,9 +103,9 @@ const VerifyOtp = () => {
                                 <input className="verify_input_number" type="text" id="sixth" maxlength="1" />
 
                             </div> <div class="mt-4">
-                                <Link to="/SourceDestination">
                                     <button onClick={verifyOTPHandler} className="verify_otp_button">VERIFY</button>
-                                </Link>
+                                {/* <Link to="/SourceDestination">
+                                </Link> */}
                             </div>
                         </div>
                     </div>

@@ -6,14 +6,16 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    Link,
+    useHistory
 } from "react-router-dom";
 
-const Home = ({ history }) => {
+const Home = () => {
+
+    const history = useHistory();
 
     const [mobileNumber, setMobileNumber] = useState(0);
     
-
     const inputChangeHandler = (val) => {
         setMobileNumber(val)
     }
@@ -29,8 +31,9 @@ const Home = ({ history }) => {
 
         let mobileNumberIn = "91" + mobileNumber;
 
-        axios.get(`http://localhost:8080/get-otp?mobileNumber=${mobileNumberIn}`).then(resp => {
+        axios.get(`http://10.12.4.25:8080/get-otp?mobileNumber=${mobileNumberIn}`).then(resp => {
             console.log(resp)
+            history.push("/VerifyOtp")
         }).catch(err => {
             console.log(err)
         })
@@ -42,9 +45,10 @@ const Home = ({ history }) => {
             <h3 className="input_text">Create Account or Sign in</h3>
             <div className="mobile_input">
                 <input onChange={(e) => inputChangeHandler(e.target.value)} className="input" type="tel" id="mobileNumber" name="mobileNumber" placeholder="Enter your mobile number" />
-                <Link to="/VerifyOtp">
                     <button className="generate_otp" onClick={getOtpHandler}>GENERATE OTP (ONE TIME PASSWORD)</button>
-                </Link>
+
+                {/* <Link to={{pathname:"/VerifyOtp", state: mobileNumber}}>
+                </Link> */}
             </div>
         </div>
     );
