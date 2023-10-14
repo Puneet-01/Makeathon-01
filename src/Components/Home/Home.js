@@ -42,6 +42,7 @@ const Home = () => {
     return (
         <div className="Home">
             <img className="backgroundImage" src={backgroundImage} alt='Redbus Logo'></img>
+            <div style={{"padding-left": "75px"}}>
             <h3 className="input_text">Create Account or Sign in</h3>
             <div className="mobile_input">
                 <input onChange={(e) => inputChangeHandler(e.target.value)} className="input" type="tel" id="mobileNumber" name="mobileNumber" placeholder="Enter your mobile number" />
@@ -49,6 +50,7 @@ const Home = () => {
 
                 {/* <Link to={{pathname:"/VerifyOtp", state: mobileNumber}}>
                 </Link> */}
+                </div>
             </div>
         </div>
     );
