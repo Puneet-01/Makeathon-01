@@ -10,7 +10,7 @@ const Card = (props) => {
         </div>
         <h4>20:42</h4>
         <h4>06:50</h4>
-        <h4> <a href=''>trackingUrl</a> </h4>
+        <h4 className='tracking-url'> <a href='https://b.redbus.com/cZCGZ84b9' target="_blank">track bus</a> </h4>
     </div>)
 }
 
